@@ -1,0 +1,11 @@
+.downVotecolor {
+    color: white;
+    font-weight: bold;
+    background-color: rgb(250, 57, 57);
+  }
+
+  .upVotecolor {
+    color: white;
+    font-weight: bold;
+    background-color: rgb(44, 221, 20);
+  }

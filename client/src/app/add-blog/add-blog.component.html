@@ -1,0 +1,36 @@
+<div class="card text-center">
+    <div class="card-header">
+        <h1>Add New Blog</h1>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <form [formGroup]="blogForm">
+                <div class="row">
+                    <label class="col-md-4"> Title</label>
+                    <div class="col-md-4">
+                        <input class="form-control" type="text" formControlName="title">
+                    </div>
+                    <div class="col-md-4"></div>
+                    <label class="col-md-4">Content: </label>
+                    <div class="col-md-4">
+                        <input class="form-control" type="text" formControlName="content">
+                    </div>
+                    <div class="col-md-4"></div>
+                    <label class="col-md-4">Author: </label>
+                    <div class="col-md-4">
+                        <input class="form-control" type="text" formControlName="author">
+                    </div>
+                    <div class="col-md-4"></div>
+                    <br />
+                    <br />
+                    <br />
+                    <div class="col-md-5"></div>
+                    <button class="btn btn-primary col-md-2" (click)="addNewBlog()">Add Blog</button>
+                    
+                </div>
+            </form>
+        </div>
+
+        
+    </div>
+</div>

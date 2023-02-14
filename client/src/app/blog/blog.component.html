@@ -1,0 +1,58 @@
+<div class="row">
+    <h1>Blog List</h1>
+</div>
+<br>
+<div class="row">
+    <div class="col-md-8"></div>
+    <div class="col-md-4">
+        <button class="btn btn-primary col-md-6" (click)="navigateToAddBlog()">Add Blog</button>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<div class="row">
+    <div class="col-md-4">
+    
+        <div class="input-group input-group-alternative">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fa fa-camera-retro fa-lg"></i></span>
+            </div>
+            <input class="form-control" placeholder="Search" type="text" [(ngModel)]="searchText">
+        </div>
+
+    </div>
+    <div class="col-md-12">
+        <!-- <div class="alert alert-primary" role="alert" *ngIf="removed">
+            This is a primary alert—check it out!
+        </div> -->
+       
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Title </th>
+                    <th scope="col">Content</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Action</th>
+                    <th scope="col">Votes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let b of blogs |filter:searchText " [class.upVotecolor]="b.upVote > b.downVote " [class.downVotecolor]="b.upVote < b.downVote ">
+                    <th scope="row">{{b.title}}</th>
+                    <td scope="row">{{b.content}}</td>
+                    <td scope="row">{{b.author}}</td>
+                    <td> <button class="btn btn-warning col-md-6" (click)="navigateToblogDetails(b)">Continue
+                            reading</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-success btn-sm my-4 rounded-0" (click)="upvote(b)">upvote</button>
+                        <button class="btn btn-danger btn-sm my-4 rounded-0" (click)="downVote(b)">downvote</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+</div>

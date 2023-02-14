@@ -1,0 +1,23 @@
+version: '3.5'
+
+services:
+  
+  fastapi:
+    image: backend
+    build:
+      dockerfile: server/dockerfile
+      context: .
+    environment:
+      PORT: 8000
+    ports:
+      - 8000:8000
+
+  angular:
+    image: frontend
+    build:
+      dockerfile: client/dockerfile
+      context: .
+     depends_on:
+      - fastapi
+ 
+
