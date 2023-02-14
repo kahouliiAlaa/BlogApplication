@@ -9,6 +9,7 @@ config = dotenv_values(".env")
 
 app = FastAPI()
 
+# to allow cors origin from backend .
 origins = ["*"]
 
 app.add_middleware(
